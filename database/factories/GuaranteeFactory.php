@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,12 @@ class GuaranteeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'company_id' => Company::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
+            'starts' => $this->faker->dateTime,
+            'ends' => $this->faker->dateTime,
+            'thumbnail' => $this->faker->imageUrl,
+            'description' => $this->faker->paragraph
         ];
     }
 }

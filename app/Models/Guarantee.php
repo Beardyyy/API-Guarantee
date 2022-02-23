@@ -9,6 +9,7 @@ class Guarantee extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['company_id', 'user_id', 'thumbnail', 'starts', 'ends'];
 
 
     public function companies()

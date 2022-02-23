@@ -14,6 +14,6 @@ class GuaranteeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Guarantee::factory(5)->create();
     }
 }

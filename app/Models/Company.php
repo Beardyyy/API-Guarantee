@@ -9,6 +9,7 @@ class Company extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'location'];
 
     public function guarantees()
     {
