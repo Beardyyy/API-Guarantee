@@ -11,5 +11,5 @@ Route::middleware('auth:api')->prefix('v1')->group(function(){
         return $request->user();
     });
 
-    Route::get('/companies/{company}', [CompanyController::class, 'show']);
+   Route::apiResource('/companies', CompanyController::class);
 });
