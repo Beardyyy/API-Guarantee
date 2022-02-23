@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use App\Http\Resources\CompanyResource;
 
 class CompanyController extends Controller
 {
@@ -39,15 +40,12 @@ class CompanyController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function show(Company $company)
     {
-        //
+
+        return new CompanyResource($company);
     }
 
     /**
