@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('guarantees', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
             $table->foreignId('company_id');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamp('starts')->nullable();

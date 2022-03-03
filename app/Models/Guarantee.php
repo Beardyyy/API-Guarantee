@@ -16,4 +16,10 @@ class Guarantee extends Model
     {
         $this->belongsTo(Company::class);
     }
+
+
+    public function categories()
+    {
+        $this->belongsTo(Category::class);
+    }
 }
