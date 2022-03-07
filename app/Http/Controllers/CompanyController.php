@@ -67,12 +67,9 @@ class CompanyController extends Controller
         return new CompanyResource($company);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
+
+
+
     public function destroy(Company $company)
     {
         $company->delete();

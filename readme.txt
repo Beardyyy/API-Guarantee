@@ -3,3 +3,17 @@ Client secret: 2mLJtTw0vtlh9iWMIqo5IKuw48MMQ0rb7yuTiJsK
 Password grant client created successfully.
 Client ID: 2
 Client secret: PxUk6E56PChRc3KZ0g8swjBjHJKcdjJXpNaXODOJ
+
+
+07.03.2022.
+
+Client ID: 2
+Client secret: NTV2aL5C6Q1IQ31y5ghmzaDN9pWtyzLIUq6cX7OY
+Password grant client created successfully.
+Client ID: 3
+Client secret: ibzy7OCni7XFWboIcPTlVozsVvEWySE89hOumXjp
+Client_3:     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzQ4MTRiOWE0NmI2MTBkZmQzMDA5MDliNjI5YzQyNjM2NzJhZGI5ODdiOTBhOTI2Zjc2YTk3MzlkYmVkZDM2NzhkMTVlNDcwZGEzOGMzNTQiLCJpYXQiOjE2NDY2Njc0OTMuMTIyMTM0LCJuYmYiOjE2NDY2Njc0OTMuMTIyMTM4LCJleHAiOjE2NzgyMDM0OTIuOTg4MjQ1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.pRqqQ0MugF5P5bAN0gwcgqNSnlfNVQPKUSr6EhUFH6S6wPsnMloIDjf8PVXe96IO6jGSWxbzTojmj3yy7z8pFxqjZBLTOrlXNdW6n9_o_dKs-RynI9Ti-j919HoTlb4ItHnmGCQpxGwuSJKLesPAz-1cc7p4Af6eZDiZsP5BdChZmf9T6SlztLHSHbqTxf6-7ig0m36og6VwmgiHzz-FMtC1YZeSCCyv-x4PV32tQ-U0AUfzrK1h8bK8-RnS4EbJgtiMDrhOfmZyT33qINr4aiTn_iStwfE0NRcKifQy_8PO88WwV__elHfinbCzpIcZNp8dWxAPNFVMF6CImfCoAYO0ww9xbF9fsp6_hCamXbqR0hHEBZxWXiPhr1Zjy_wJgSE677YzAtWulfdN0Rl7zuf9QV0Tkvk-9Btl-7sqvyuxL0m8ilwxVEXBrajcbsYi70X-ESKFfkhZZY_mKLUQvJFSUn-buaE9z9U7Kq5BuO-nfCISCyPYBzeE70r7C7OIw_0t7g0k29s4DmVM3t_QlCb4l_83i9TxQyzLiXZpoLNyvxph6mSxPe2Z8Ri-nHCQ8WOczd0PWWnepz08eiUcHbSUA6NdsksHk3lrglROYc5lY5VqG5WxJ4F1eWzR7VNpcq0mgJwwKgeL-eCLzhvHVZ5TVHxFnaS_GuQtO6eA414",
+
+Issuing about token authorization----------------------------------
+
+!!!!! ->-> When recreating a new user leads to a token accessing problem, run new php artisan passport:install command and it will generate a fresh client_id and client_secret for creating an access token.

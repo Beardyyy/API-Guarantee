@@ -11,6 +11,8 @@ class Company extends Model
 
     protected $fillable = ['name', 'location'];
 
+
+
     public function guarantees()
     {
         return $this->hasMany(Guarantee::class);

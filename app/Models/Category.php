@@ -12,9 +12,8 @@ class Category extends Model
     protected $fillable = ['name'];
 
 
-
     public function guarantees()
     {
-        return $this->hasMany(Category::class);
+        return $this->hasMany(Guarantee::class);
     }
 }
