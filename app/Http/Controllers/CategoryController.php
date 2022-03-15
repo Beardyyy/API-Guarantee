@@ -20,13 +20,6 @@ class CategoryController extends Controller
 
 
 
-    public function create()
-    {
-        //
-    }
-
-
-
 
     public function store(StoreCategoryRequest $request)
     {
@@ -49,17 +42,13 @@ class CategoryController extends Controller
 
 
 
-    public function edit(Category $category)
-    {
-        //
-    }
-
-
 
 
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $category->update([
+            'name' => $request->input('name')
+        ]);
     }
 
 

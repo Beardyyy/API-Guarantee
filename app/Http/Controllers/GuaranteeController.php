@@ -2,52 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GuaranteeResource;
 use App\Models\Guarantee;
 use App\Http\Requests\StoreGuaranteeRequest;
 use App\Http\Requests\UpdateGuaranteeRequest;
 
 class GuaranteeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+
+
     public function index()
     {
-        //
+        return  GuaranteeResource::collection(Guarantee::all());
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreGuaranteeRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function store(StoreGuaranteeRequest $request)
     {
-        //
+        $guarantee = Guarantee::create([
+
+            'category_id' => $request->input('category_id'),
+            'company_id' => $request->input('company_id'),
+            'user_id' => $request->getUser(),
+            'starts' => $request->input('starts'),
+            'ends' => $request->input('ends'),
+            'thumbnail' => $request->input('thumbnail'),
+            'description' => $request->input('description'),
+            'created_at' => $request->input('created_at'),
+            'updated_at' => $request->input('updated_at')
+
+        ]);
+
+        return new GuaranteeResource($guarantee);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Guarantee  $guarantee
-     * @return \Illuminate\Http\Response
-     */
+
+
+
     public function show(Guarantee $guarantee)
     {
-        //
+        return new GuaranteeResource($guarantee);
     }
 
     /**

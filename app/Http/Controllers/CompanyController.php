@@ -20,12 +20,6 @@ class CompanyController extends Controller
 
 
 
-    public function create()
-    {
-        //
-    }
-
-
 
 
     public function store(StoreCompanyRequest $request)
@@ -40,18 +34,12 @@ class CompanyController extends Controller
 
 
 
+
     public function show(Company $company)
     {
         return new CompanyResource($company);
     }
 
-
-
-
-    public function edit(Company $company)
-    {
-        //
-    }
 
 
 
