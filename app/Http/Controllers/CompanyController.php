@@ -6,21 +6,16 @@ use App\Models\Company;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Http\Resources\CompanyResource;
+use Illuminate\Http\JsonResponse;
 
 
-class CompanyController extends Controller
+class CompanyController extends ResponseController
 {
 
-
-
-    public function index()
+    public function index(): JsonResponse
     {
-        return CompanyResource::collection(Company::all());
+        return $this->createResponse((CompanyResource::collection(Company::all()))->toArray());
     }
-
-
-
-
 
     public function store(StoreCompanyRequest $request)
     {
@@ -32,17 +27,10 @@ class CompanyController extends Controller
         return new CompanyResource($company);
     }
 
-
-
-
     public function show(Company $company)
     {
-        return new CompanyResource($company);
+        return $this->createResponse((new CompanyResource($company))->toArray(request()));
     }
-
-
-
-
 
     public function update(UpdateCompanyRequest $request, Company $company)
     {
@@ -54,9 +42,6 @@ class CompanyController extends Controller
 
         return new CompanyResource($company);
     }
-
-
-
 
     public function destroy(Company $company)
     {

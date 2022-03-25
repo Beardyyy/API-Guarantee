@@ -10,17 +10,11 @@ use App\Http\Requests\UpdateGuaranteeRequest;
 class GuaranteeController extends Controller
 {
 
-
-
-
     public function index()
     {
         return  GuaranteeResource::collection(Guarantee::all());
 
     }
-
-
-
 
     public function store(StoreGuaranteeRequest $request)
     {
@@ -40,9 +34,6 @@ class GuaranteeController extends Controller
 
         return new GuaranteeResource($guarantee);
     }
-
-
-
 
     public function show(Guarantee $guarantee)
     {
