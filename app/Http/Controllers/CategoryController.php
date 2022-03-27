@@ -7,19 +7,13 @@ use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 
-class CategoryController extends Controller
+class CategoryController extends ResponseController
 {
-
-
 
     public function index()
     {
-        return  CategoryResource::collection(Category::all());
+        return $this->createResponse((CategoryResource::collection(Category::all()))->toArray(request()));
     }
-
-
-
-
 
     public function store(StoreCategoryRequest $request)
     {
@@ -57,7 +51,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-
         return response(null, 204);
     }
 }
