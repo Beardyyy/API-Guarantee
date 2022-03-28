@@ -7,13 +7,12 @@ use Illuminate\Foundation\Http\FormRequest;
 class StoreGuaranteeRequest extends FormRequest
 {
 
-    public function authorize()
-    {
+    public function authorize(): bool{
         return true;
     }
 
-    public function rules()
-    {
+    public function rules(): array{
+        
         return [
         
             'category_id' => 'required|max:100',

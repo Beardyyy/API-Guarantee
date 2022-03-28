@@ -11,8 +11,7 @@ class StoreCategoryRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize(){
         return true;
     }
 
@@ -21,8 +20,7 @@ class StoreCategoryRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
+    public function rules(): array{
         return [
             'name' => 'required|unique:categories|max:255'
         ];

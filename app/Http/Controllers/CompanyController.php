@@ -10,16 +10,13 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
 
-class CompanyController extends ResponseController
-{
+class CompanyController extends ResponseController{
 
-    public function index(): JsonResponse
-    {
+    public function index(): JsonResponse{  
         return $this->createResponse((CompanyResource::collection(Company::all()))->toArray(request()));
     }
 
-    public function store(StoreCompanyRequest $request): JsonResponse
-    {
+    public function store(StoreCompanyRequest $request): JsonResponse{
         $company = Company::create([
             'name' => $request->input('name'),
             'location' => $request->input('location')
@@ -28,24 +25,21 @@ class CompanyController extends ResponseController
         return $this->createResponse((new CompanyResource($company))->toArray(request()));
     }
 
-    public function show(Company $company): JsonResponse
-    {
+    public function show(Company $company): JsonResponse{
         return $this->createResponse((new CompanyResource($company))->toArray(request()));
     }
 
-    public function update(UpdateCompanyRequest $request, Company $company): JsonResponse
-    {
+    public function update(UpdateCompanyRequest $request, Company $company): JsonResponse{
 
         $company->update([
             'name' => $request->input('name'),
             'location' => $request->input('location')
         ]);
 
-        return new CompanyResource($company);
+        return $this->createResponse((new CompanyResource($company))->toArray(request()));
     }
 
-    public function destroy(Company $company): Response
-    {
+    public function destroy(Company $company): Response{
         $company->delete();
         return response(null, 204);
     }

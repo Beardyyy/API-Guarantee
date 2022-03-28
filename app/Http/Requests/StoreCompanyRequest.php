@@ -11,8 +11,7 @@ class StoreCompanyRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize(): bool{
         return true;
     }
 
@@ -21,8 +20,7 @@ class StoreCompanyRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
+    public function rules(): array{
         return [
             'name' => 'required|unique:companies|max:255',
             'location' => 'required|max:255'

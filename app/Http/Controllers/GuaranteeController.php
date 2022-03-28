@@ -6,18 +6,19 @@ use App\Http\Resources\GuaranteeResource;
 use App\Models\Guarantee;
 use App\Http\Requests\StoreGuaranteeRequest;
 use App\Http\Requests\UpdateGuaranteeRequest;
+use Illuminate\Http\JsonResponse;
 
-class GuaranteeController extends Controller
+
+class GuaranteeController extends ResponseController
 {
 
-    public function index()
-    {
-        return  GuaranteeResource::collection(Guarantee::all());
+    public function index(): JsonResponse{
 
+        return  $this->createResponse((GuaranteeResource::collection(Guarantee::all()))->toArray(request()));
     }
 
-    public function store(StoreGuaranteeRequest $request)
-    {
+    public function store(StoreGuaranteeRequest $request): JsonResponse{
+
         $guarantee = Guarantee::create([
 
             'category_id' => $request->input('category_id'),
@@ -32,23 +33,12 @@ class GuaranteeController extends Controller
 
         ]);
 
-        return new GuaranteeResource($guarantee);
+        return $this->createResponse((new GuaranteeResource($guarantee))->toArray(request()));
     }
 
-    public function show(Guarantee $guarantee)
-    {
-        return new GuaranteeResource($guarantee);
-    }
+    public function show(Guarantee $guarantee): JsonResponse{
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Guarantee  $guarantee
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Guarantee $guarantee)
-    {
-        //
+        return $this->createResponse((new GuaranteeResource($guarantee))->toArray(request()));
     }
 
     /**
