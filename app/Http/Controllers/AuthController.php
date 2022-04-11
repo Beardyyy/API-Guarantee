@@ -23,6 +23,8 @@ class AuthController extends Controller
             throw new Exception("Email or password are incorrect!", 1);
         }
 
-        return $user->createToken('Auth token')->accessToken;
+        $user->createToken('Auth token')->accessToken;
+
+    return $user->accessToken;
     }
 }
